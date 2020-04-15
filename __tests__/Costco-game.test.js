@@ -2,16 +2,18 @@ import { Character } from "./../src/characters.js";
 import { Game } from "./../src/game-play.js";
 
 describe ('Character', function() {
-  let myCharacter;
+  let myGame;
 
   beforeEach(() => {
-    myCharacter = new Character("Jim", 1, 3);
+    myGame = new Game();
   });
 
   test ('verifies that character is created with correct properties', function() {
-    expect(myCharacter.name).toEqual("Jim");
-    expect(myCharacter.seniority).toEqual(1);
-    expect(myCharacter.stressLevel).toEqual(3);
+    myGame.addCharacter("Jim", "pizzaCutter");
+
+    expect(myGame.characters[0].name).toEqual("Jim");
+    expect(myGame.characters[0].type).toEqual("pizzaCutter");
+    //expect(myCharacter.stressLevel).toEqual(3);
   });
 
   test ('verifies that character type chickenCooker is created', function() {
