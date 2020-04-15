@@ -14,27 +14,27 @@ export class Game {
 
   addCharacter(name, characterType) {
     if (characterType === 'pizzaCutter'){
-      let character = new PizzaCutter(name);
-      this.character.push(character);
+      let character = new PizzaCutter(name, characterType);
+      this.characters.push(character);
     } else if (characterType === 'chickenCooker') {
-      let character = new ChickenCooker(name);
+      let character = new ChickenCooker(name, characterType);
       this.characters.push(character);
       return characterType;
     } else if (characterType === 'produceStocker') {
-      let character = new ProduceStocker(name);
+      let character = new ProduceStocker(name, characterType);
       this.characters.push(character);
       return characterType;
     } else if (characterType === 'doorPerson') {
-      let character = new DoorPerson(name);
+      let character = new DoorPerson(name, characterType);
       this.characters.push(character);
       return characterType;
     } else if (characterType === 'supervisor'){
-      let character = new Supervisor(name);
+      let character = new Supervisor(name, characterType);
       this.characters.push(character);
       return characterType;
     } else if (characterType === 'manager') {
-      let character = new Manager(name);
-      this.character.push(character);
+      let character = new Manager(name, characterType);
+      this.characters.push(character);
       return characterType;
     } 
 

@@ -9,7 +9,7 @@
 // }
 
 export class Character {
-  constructor(name) {
+  constructor(name, type) {
     this.name = name;
     this.seniority = 0;
     this.stressLevel = 0;
@@ -38,27 +38,50 @@ export class Character {
 
 
 export class PizzaCutter extends Character {
-  constructor() {
-    this.type = 'pizzaCutter';
+  constructor(name, type) {
+    super(name, type);
+    this.seniority = 2;
+    this.stressLevel = 4;
   }
 }
 
 export class ChickenCooker extends Character {
- 
+  constructor(name, type) {
+    super(name, type);
+    this.seniority = 2;
+    this.stressLevel = 4;
+  }
 }
 
 export class ProduceStocker extends Character {
- 
+  constructor(name, type) {
+    super(name, type);
+    this.seniority = 2;
+    this.stressLevel = 4;
+  }
 }
 
 export class DoorPerson extends Character {
- 
+  constructor(name, type) {
+    super(name, type);
+    this.seniority = 2;
+    this.stressLevel = 4;
+  }
 }
 
 export class Supervisor extends Character {
- 
+  constructor(name, type) {
+    super(name, type);
+    this.seniority = 2;
+    this.stressLevel = 4;
+
+  }
 }
 
 export class Manager extends Character {
- 
+  constructor(name, type) {
+    super(name, type);
+    this.seniority = 2;
+    this.stressLevel = 4;
+  }
 }
