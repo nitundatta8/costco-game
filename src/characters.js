@@ -6,6 +6,7 @@ export class Character {
     this.timeOff = 0;
 
   }
+
 //levelUp() {
 //  
 //}
@@ -20,30 +21,29 @@ export class Character {
 //
 //checkForWin() {
 //  
-//}
 }
-
-//class PizzaCutter extends Character {
-//
 //}
 
-//class ChickenCooker extends Character {
-//  
-//}
+// class PizzaCutter extends Character {
 
-//class ProduceStocker extends Character {
-//  
-//}
+// }
 
-//class DoorPerson extends Character {
-//  
-//}
+// class ChickenCooker extends Character {
+ 
+// }
 
-//class Supervisor extends Character {
-//  
-//}
+// class ProduceStocker extends Character {
+ 
+// }
 
-//class Manager extends Character {
-//  
-//}
+// class DoorPerson extends Character {
+ 
+// }
 
+// class Supervisor extends Character {
+ 
+// }
+
+// class Manager extends Character {
+ 
+// }
