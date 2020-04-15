@@ -15,10 +15,8 @@ export class Character {
     this.stressLevel = 0;
     this.timeOff = 0;
     this.type = type;
-    
-
+    //this.assets = ["smile", "polite", "smell good", "funny", "weird laugh", "poor social skills", "always late", "no coping skills", "angry"];
   }
-
 
 //levelUp() {
 //  
@@ -42,13 +40,14 @@ export class PizzaCutter extends Character {
     super(name, type);
     this.seniority = 2;
     this.stressLevel = 4;
+
   }
 }
 
 export class ChickenCooker extends Character {
   constructor(name, type) {
     super(name, type);
-    this.seniority = 2;
+    this.seniority = 1;
     this.stressLevel = 4;
   }
 }
@@ -72,16 +71,13 @@ export class DoorPerson extends Character {
 export class Supervisor extends Character {
   constructor(name, type) {
     super(name, type);
-    this.seniority = 2;
-    this.stressLevel = 4;
-
+    this.seniority = 5;
   }
 }
 
 export class Manager extends Character {
   constructor(name, type) {
     super(name, type);
-    this.seniority = 2;
-    this.stressLevel = 4;
+    this.seniority = 7;
   }
 }

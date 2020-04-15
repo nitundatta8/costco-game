@@ -2,15 +2,15 @@
 
 #### Allows user to choose a character class and name. The user can then attempt to negotiate with computer "bosses" to increase their seniority. For certain increases in seniority, the player's timeoff increases. Once the player's time off reaches a certain level, they win._, 4/15/2020_
 
-#### By _**DJ Zevenbergen, Julia Seidman, Nitun Datta**_
+#### By _**DJ Zevenbergen, Julia Seidman, Nitun Datta, Mikah Mathews**_
 
 ## Description
 
-_This web application uses classes, looping, arrays, to create a user's character. The user can then attempt to negotiate with computer "bosses" to increase their seniority. For certain increases in seniority, the player's timeoff increases. Once the player's time off reaches a certain level, they win.._
+_This web application uses classes, looping, and arrays to create a user's character. The user can then attempt to negotiate with computer "bosses" to increase their seniority. For certain increases in seniority, the player's timeoff increases. Once the player's time off reaches a certain level, they win._
 
 ## Setup/Installation Requirements
 
-* Download entire repo
+* Clone repository from GitHub in terminal or console
 * npm install
 * npm run start
 
@@ -21,26 +21,26 @@ _This web application uses classes, looping, arrays, to create a user's characte
     * Input: Name: "Ted" Job: "PizzaCutter" 
     * Output: Your Character: "Ted, a Pizza Cutter in Warehouse 327.  Your Seniority Level is 2.  Your Stress Level is 3.  You have 0 days time off.  Your goal is to reach 5 days off before the stress forces you to quit."
 
-* - The program calculates and returns a price based on the amound of toppings, with cheese not counting as an extra topping.
-    * Input: "Large", "Cheese", "Pepperoni", "Anchovies"
-    * Output: "Pizza 1, "Large", "Cheese", "Pepperoni", "Anchovies", "$14.00"
+* - The program presents the character with "opponents" in the form of conflicts with co-workers. 
+    * Input: "start Game"
+    * Output:  "Manager Jim-Bob wants to talk about your lack of initiative. Will you engage or will you shy away?"
 
-* - The program has capabilities to handle multiple different pizzas, calculating total cost upon order
-    * Input: '"Large","Cheese", "Pepperoni", "Anchovies", '"Small", "Cheese", "Sausage"'
-    * Output: '"Pizza 1", "Large","Cheese", "Pepperoni", "Anchovies", "$14.00"', '"Pizza 2", "Small", "Cheese", "Sausage", "$8.00"' 
+* - The user decides to confront or avoid the conflict. The outcome is determined in part by seniority and character "assets".
+    * Input: "Avoid!"
+    * Output:  "You successfully dodged a bullet.  But you also are no closer to getting any time off."
+    * Input: "Confront!"
+    * Output: "You messed with the wrong manager on the wrong day.  Jim Bob assigns you to the graveyard shift.  Gain 2 stress points."
+    * Input: "Confront!"
+    * Output: "Your winning smile and self-deprecating sense of humor win the day.  You get assigned to hand out holiday sale flyers and put in line for a promotion.  Seniority increases by 1 and stress decreases by 1!"
+
+* - 
+    * Input: 
+    * Output:  
 
 
-* - As the user orders, they should be able to click on a list of their pizzas to see details, and delete a pizza if desired.
-    * Input: "Pizza 1" on click
-    * Output: "Large","Cheese", "Pepperoni", "Anchovies", "$14.00" - "Delete?"
-
-* - The program deletes pizzas upon click of the delete button.
-  * Input: "Cheese, Pepperoni, Anchovies" - "Delete?"  -- on click
-  * Output: "pizza 1 - deleted"
-
-* - The program gives a total price and estimated time that the pizza will be ready based on number of pizzas and pickup vs delivery option
-  * Example: Estimated time goes up by 5 minutes per pizza and 20 minutes is added if it is a delivery
-  
+* - 
+    * Input: 
+    * Output:  
 
 
 ## Known Bugs
@@ -57,4 +57,4 @@ _https://djzevenbergen.github.io/pizza-parlor_
 
 Copyright © 2020
 
-**_DJ Zevenbergen_**
+**_DJ Zevenbergen, Mikah Mathews, Nitun Datta, Julia Seidman_**

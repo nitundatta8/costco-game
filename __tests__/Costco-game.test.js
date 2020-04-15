@@ -16,7 +16,6 @@ describe ('Character', function() {
     expect(myGame.characters[0].seniority).toEqual(2);
     expect(myGame.characters[0].stressLevel).toEqual(4);
     expect(myGame.characters[0].timeOff).toEqual(0);
-    //expect(myCharacter.stressLevel).toEqual(3);
   });
 
   test ('verifies that character type chickenCooker is created', function() {
@@ -68,5 +67,34 @@ describe ('Character', function() {
     expect(myGame.characters[0].stressLevel).toEqual(4);
     expect(myGame.characters[0].timeOff).toEqual(0);
   });
+
+test ('when game is started, verifies that user character & 4 computer-generated characters are instantiated', function() {
+  myGame.startGame("Dave", "pizzaCutter");
+
+  expect(myGame.characters[0].name).toEqual("Dave");
+  expect(myGame.characters[0].type).toEqual("pizzaCutter");
+  expect(myGame.characters[0].seniority).toEqual(2);
+  expect(myGame.characters[0].stressLevel).toEqual(4);
+  expect(myGame.characters[0].timeOff).toEqual(0);
+
+  expect(myGame.characters[1].name).toEqual("Devious DJ");
+  expect(myGame.characters[1].type).toEqual("supervisor");
+  expect(myGame.characters[1].seniority).toEqual(5);
+  expect(myGame.characters[1].stressLevel).toEqual(0);
+  expect(myGame.characters[1].timeOff).toEqual(0);
+
+  expect(myGame.characters[2].name).toEqual("Malevolent Mikah");
+  expect(myGame.characters[2].type).toEqual("ChickenCooker");
+  expect(myGame.characters[2].seniority).toEqual(5);
+  expect(myGame.characters[2].stressLevel).toEqual(0);
+  expect(myGame.characters[2].timeOff).toEqual(0);
+
+  pect(myGame.characters[3].name).toEqual("Needling Nitun");
+  expect(myGame.characters[3].type).toEqual("supervisor");
+  expect(myGame.characters[3].seniority).toEqual(5);
+  expect(myGame.characters[3].stressLevel).toEqual(0);
+  expect(myGame.characters[3].timeOff).toEqual(0);
+
+})  
 
 });
