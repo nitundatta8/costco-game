@@ -27,26 +27,27 @@ _This web application uses classes, looping, and arrays to create a user's chara
 
 * - The user decides to confront or avoid the conflict. The outcome is determined in part by seniority and character "assets".
     * Input: "Avoid!"
-    * Output:  "You successfully dodged a bullet.  But you also are no closer to getting any time off."
+    * Output:  "You successfully dodged a bullet.  But you also are no closer to getting any time off, and your stress has increased 1."
     * Input: "Confront!"
     * Output: "You messed with the wrong manager on the wrong day.  Jim Bob assigns you to the graveyard shift.  Gain 2 stress points."
     * Input: "Confront!"
     * Output: "Your winning smile and self-deprecating sense of humor win the day.  You get assigned to hand out holiday sale flyers and put in line for a promotion.  Seniority increases by 1 and stress decreases by 1!"
 
-* - 
+* - Every 2 levels of seniority increase wins 1 day off.
     * Input: 
     * Output:  
 
-
-* - 
+* - If player's stress level reaches 10, the game is over because they quit their job.
     * Input: 
     * Output:  
+
+* - If player gains 5 days off, they win the game
+    * Input: Days Off = 5
+    * Output: Congratulations! Your manager has decided to grant you 3 days off. You decide to relax and put your resignation papers on hold.
 
 
 ## Known Bugs
-- The submit button says "add another pizza" even if the user hasn't entered a pizza yet
-- On click, the individual pizza details are displayed far down the page with no alert or anything notifying the user
-- The receipt says "your pizzas" plural, even if the user only orders 1 pizza
+- 
 
 
 ## Access to Website

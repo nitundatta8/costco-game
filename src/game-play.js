@@ -39,17 +39,16 @@ export class Game {
 
   startGame(name, characterType){
     this.addCharacter(name, characterType);
-    this.characters.push(new ChickenCooker("Malevolent Mikah", "manager"));
+
+    this.characters.push(new ChickenCooker("Malevolent Mikah", "chickenCooker"));
     this.characters.push(new Supervisor("Devious DJ", "supervisor"));
     this.characters.push(new Supervisor ("Needling Nitun", 'supervisor'))
     this.characters.push(new Manager ("Jingoistic Julia", "manager"))
   }
 
+  battle(){
+    
+  }
+
 };
 
-// let randomValue = characters[Math.floor(Math.random() * characters.length)]; (This will randomly picj)
-
-// arrayOfCoworkers = loop 4 times thru stockCharacters{
-  // let opponentArray = []
-  // opponentArray.push(randomValue)
-//}

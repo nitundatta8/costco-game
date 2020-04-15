@@ -1,12 +1,15 @@
-// export class Character {
-//   constructor(name, seniority, stressLevel) {
-//     this.name = name;
-//     this.seniority = seniority;
-//     this.stressLevel = stressLevel;
-//     this.timeOff = 0;
-
-//   }
-// }
+const assets = {
+  smile: 1,
+  polite: 1,
+  smellGood: 1,
+  funny: 1,
+  DeEscalation: 1,
+  friendly: 1,
+  weirdLaugh: -1,
+  poorSocialSkills: -1,
+  alwaysLate: -1,
+  noCopingSkills: -1,
+}
 
 export class Character {
   constructor(name, type) {
@@ -15,9 +18,9 @@ export class Character {
     this.stressLevel = 0;
     this.timeOff = 0;
     this.type = type;
-    //this.assets = ["smile", "polite", "smell good", "funny", "weird laugh", "poor social skills", "always late", "no coping skills", "angry"];
   }
-
+addAssets() // explain how we are going to use assets
+  
 //levelUp() {
 //  
 //}
@@ -55,16 +58,16 @@ export class ChickenCooker extends Character {
 export class ProduceStocker extends Character {
   constructor(name, type) {
     super(name, type);
-    this.seniority = 2;
-    this.stressLevel = 4;
+    this.seniority = 4;
+    this.stressLevel = 2;
   }
 }
 
 export class DoorPerson extends Character {
   constructor(name, type) {
     super(name, type);
-    this.seniority = 2;
-    this.stressLevel = 4;
+    this.seniority = 4;
+    this.stressLevel = 3;
   }
 }
 
