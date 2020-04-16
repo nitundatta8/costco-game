@@ -53,9 +53,35 @@ export class Game {
     this.characters.push(new StoreManager("Juanita", "storeManager"));
   }
 
+
+  chooseOpponent(){
+    let ranNumber = Math.floor(Math.random() * characters.length) + 1;
+    return ranNumber;
+  }
+
+  diceRoll(){
+    let dicePair = [];
+    for (i = 0; i < 2; i++) {
+      let ranNumber = Math.floor(Math.random() * 6) + 1;
+      dicePair.push(diceNumber);
+    }
+    return dicePair;
+  }
+
   battle(){
+    let enemyIndex = chooseOpponent();
+
+    
+
+
+    let roll = diceRoll();
+
+    
+
+
 
   }
 
 };
 
+//let ranNumber = Math.floor(Math.random() * 6)+1;

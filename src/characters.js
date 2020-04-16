@@ -18,25 +18,18 @@ export class Character {
     this.stressLevel = 0;
     this.timeOff = 0;
     this.type = type;
-    // this.assets = [];
   }
 
 addAssets() {
   let allAssetsArray = Object.entries(allAssets);
- 
-  //console.log(allAssetsArray);
-  let assetPair = []; // try defining asset pair
+  let assetPair = []; 
   for (let i = 0; i < 2; i++) {
     let randNum = Math.floor(Math.random() * allAssetsArray.length);
     let random = allAssetsArray[randNum];
-    //console.log(random);
     assetPair.push(random);
   }
-    //console.log(assetPair);
-
   return assetPair;
 } 
-  
   
 //levelUp() {
 //  
@@ -54,7 +47,6 @@ addAssets() {
 //  
 }
 
-
 export class PizzaCutter extends Character {
   constructor(name, type) {
     super(name, type);
@@ -64,7 +56,6 @@ export class PizzaCutter extends Character {
   }
   
 }
-
 
 export class ChickenCooker extends Character {
   constructor(name, type) {

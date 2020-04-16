@@ -1,7 +1,5 @@
-import { Character } from "./../src/characters.js";
 import { Game } from "./../src/game-play.js";
 import { allAssets } from "./../src/characters.js";
-import { addAssets } from "./../src/characters.js";
 
 describe ('Character', function() {
   let myGame;
@@ -129,18 +127,13 @@ test ('character is randomly assigned 2 assets', function() {
   myGame.addCharacter("Ryan", "pizzaCutter");
   myGame.characters[0].addAssets();
   expect(Object.entries(allAssets)).toContainEqual(Object.values(myGame.characters[0].assets[0]));
-  expect(Object.entries(allAssets)).toContainEqual(Object.values(myGame.characters[0].assets[0]));
-  //expect.toContain(myGame.characters[0].assets)
-})
+  expect(Object.entries(allAssets)).toContainEqual(Object.values(myGame.characters[0].assets[1]));
 
-// Object.entries(allAssets);
-// Object.entries(myGame.character[0].assets);
 
-// Object.entries --> array of key/value pairs
-// Object.keys --> array of keys
-// Object.values --> array of values
+});
 
-// expect(allAssets).arrayContaining(myGame.character[0].assets)
+
+
 
 //Battle Tests
 //test('when battle begins, includes myPlayer and an opponent name, job & seniority from this.characters[i])
