@@ -39,8 +39,8 @@ export class Game {
       let character = new StoreManager(name, characterType);
       this.characters.push(character);
       return characterType;
-    } 
-  }
+    }; 
+  };
 
   startGame(name, characterType){
     this.addCharacter(name, characterType);
@@ -56,6 +56,18 @@ export class Game {
     let ranNumber = Math.floor(Math.random() * characters.length) + 1;
     let opponent = this.characters[ranNumber];
     return opponent;
+  };
+
+  getTimeOff() {
+    if (this.characters.seniority % 2 === 0) {
+      this.timeOff ++;
+    }
+  };
+
+  win() {
+    if(this.timeOff === 5) {
+      console.log("YOU WIN - YOU DON'T HATE YOUR COWORKERS ENOUGH TO QUIT");
+    }
   };
 };
 
