@@ -57,52 +57,59 @@ export class Game {
     let opponent = this.characters[ranNumber];
     return opponent;
   };
-
-
 };
 
+//we need instantiate a battle in the tests
+//it needs to be fed the user and the opponent
+//amen
+//check in the test if battle[user] is like the user
+// check in the test if battle [oppnenent is like the opponent]
 
-  export class Battle {
-    constructor(user, opponent) {
-      this.user=user;
-      this.opponent=opponent;
-      this.roll = 0;
-      this.battleWon = false;
-    }
-    
-    diceRoll(){
-      let dicePair = [];
-      for (i = 0; i < 2; i++) {
-        let ranNumber = Math.floor(Math.random() * 6) + 1;
-        dicePair.push(diceNumber);
-      }
-      return dicePair;
-    }
-    doBattle(){
-      
-      // let enemyIndex = chooseOpponent();
-      // let name = this.characters[enemyIndex].name;
-      // let seniority = this.character[enemyIndex].seniority;
-      // let assets = this.character[enemyIndex].seniority;
-      let battleWon = false; 
-      let roll = diceRoll();
-      let diceRoll = roll[0] + roll[1];
-      // userPower takes seniority and then adds the modifiers from assets
-      let userPower = this.user.seniority + Object.values(this.user.assets[0]) + Object.values(this.user.assets[1]);
-      // margin is the equation for determining how much you have to roll to win
-      let margin = this.opponent.seniority - userPower + 5;
-      // if we modify user stats + opponent stats here, how do we return the outcome to the game?
-      // update character and opponent after battle
-
-      if (diceRoll > margin) {
-        battleWon = true;
-      }
-      else {
-        battleWon = false;
-      }
-    }
+export class Battle {
+  constructor(user, opponent) {
+    this.user=user;
+    this.opponent=opponent;
+    this.roll = 0;
+    this.margin = 0;
+    this.battleWon = false;
+  }
   
-  };
+  diceRollFunction() {
+    let dicePair = [];
+    for (let i = 0; i < 2; i++) {
+      let ranNumber = Math.floor(Math.random() * 6) + 1;
+      dicePair.push(ranNumber);
+    }
+    return dicePair;
+  }
+
+  doBattle() {
+    let battleWon = false; 
+    let roll = this.diceRollFunction();
+    let diceRoll = roll[0] + roll[1];
+    // userPower takes seniority and then adds the modifiers from assets
+    let userPower = this.user.seniority + Object.values(this.user.assets[0])[1] + Object.values(this.user.assets[1])[1];
+    // margin is the equation for determining how much you have to roll to win
+    this.margin = this.opponent.seniority - userPower + 5;
+    // if we modify user stats + opponent stats here, how do we return the outcome to the game?
+    // update character and opponent after battle
+
+    // if (diceRoll >= this.margin) {
+    //   battleWon = true;
+    //   this.user.seniority ++;
+    //   this.user.stress -= 1;
+    //   return "you won";
+    // }
+    // else {
+      
+    //   battleWon = false;
+    //   this.user.seniority -= 1;
+    //   this.user.stress -= 1;
+    //   return "you lost";
+    // }
+  }
+
+};
   
     
 

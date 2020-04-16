@@ -1,5 +1,6 @@
 import { Game } from "./../src/game-play.js";
 import { allAssets } from "./../src/characters.js";
+import { Battle } from "./../src/game-play.js";
 
 describe ('Character', function() {
   let myGame;
@@ -133,6 +134,69 @@ test ('character is randomly assigned 2 assets', function() {
 });
 
 
+test('battle takes in the player and opponent', function() {
+  myGame.startGame("Jethro", "chickenCooker");
+
+  let thisBattle = new Battle(myGame.characters[0], myGame.characters[1]);
+  expect(thisBattle.user.name).toEqual('Jethro');
+  expect(thisBattle.opponent.name).toEqual('Devious DJ');
+  
+});
+
+
+test('battle determines margin based on seniority and assets of player', function() {
+  myGame.startGame("Jethro", "chickenCooker");
+  let myBattle = new Battle(myGame.characters[0], myGame.characters[1]);
+  myBattle.doBattle();
+  let myAssets = (Object.values(myGame.characters[0].assets[0])[1]) + (Object.values(myGame.characters[0].assets[1])[1]);
+  let opp = myGame.characters[1].seniority;
+  let player = myGame.characters[0].seniority;
+  let p = player + myAssets;
+  expect(myBattle.margin).toEqual(opp - p + 5);
+
+});
+
+
+test('battle diceRoll returns an array of two random dice values', function() {
+  myGame.startGame("Fred", "ProduceStocker");
+  let thisBattle = new Battle(myGame.characters[0], myGame.characters[2]);
+  expect(diceRoll).toEqual();
+});
+
+
+test('battle determines whether the user wins or loses based on roll and margin', function() {
+
+});
+
+
+test('battle updates player seniority if player wins', function() {
+
+});
+
+
+test('battle updates opponent vanquished status to true if player wins', function() {
+
+});
+
+
+test('battle updates player stress level if player loses', function() {
+
+});
+
+
+test('every two seniority points that the player goes up, their time off increases by 1', function() {
+
+});
+
+test('if timeoff reaches 3 (or 5), the player wins', function() {
+
+});
+
+test('if player chooses to back away, their stress level increase by 1 and a new opponent is chosen', function() {
+
+
+});
+
 
 
 //Battle Tests
@@ -142,4 +206,5 @@ test ('character is randomly assigned 2 assets', function() {
 //test ('battle outcome increases or decreases seniority and stress points')
 
 });
+
 
