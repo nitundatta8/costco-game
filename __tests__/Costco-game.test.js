@@ -1,5 +1,7 @@
 import { Character } from "./../src/characters.js";
 import { Game } from "./../src/game-play.js";
+import { allAssets } from "./../src/characters.js";
+import { addAssets } from "./../src/characters.js";
 
 describe ('Character', function() {
   let myGame;
@@ -34,7 +36,9 @@ describe ('Character', function() {
 
     expect(myGame.characters[0].name).toEqual("Kyle");
     expect(myGame.characters[0].type).toEqual("produceStocker");
-    expect(myGame.characters[0].seniority).toEqual(4);
+    expect(myGame.characters[0].seniority).toEqual(3
+      
+      );
     expect(myGame.characters[0].stressLevel).toEqual(2);
     expect(myGame.characters[0].timeOff).toEqual(0);
 
@@ -44,7 +48,7 @@ describe ('Character', function() {
     myGame.addCharacter("Mikey", "doorPerson");
     expect(myGame.characters[0].name).toEqual("Mikey");
     expect(myGame.characters[0].type).toEqual("doorPerson");
-    expect(myGame.characters[0].seniority).toEqual(4);
+    expect(myGame.characters[0].seniority).toEqual(3);
     expect(myGame.characters[0].stressLevel).toEqual(3);
     expect(myGame.characters[0].timeOff).toEqual(0);
   });
@@ -68,7 +72,19 @@ describe ('Character', function() {
     expect(myGame.characters[0].timeOff).toEqual(0);
   });
 
-  test ('when game is started, verifies that user character & 4 computer-generated characters are instantiated', function() {
+  test('verifies that character type manager is created', function() {
+    myGame.addCharacter("Juanita", "storeManager");
+
+    expect(myGame.characters[0].name).toEqual("Juanita");
+    expect(myGame.characters[0].type).toEqual("storeManager");
+    expect(myGame.characters[0].seniority).toEqual(9);
+    expect(myGame.characters[0].stressLevel).toEqual(0);
+    expect(myGame.characters[0].timeOff).toEqual(0);
+  });
+
+
+
+  test ('when game is started, verifies that user character & 5 computer-generated characters are instantiated', function() {
     myGame.startGame("Dave", "pizzaCutter");
 
     expect(myGame.characters[0].name).toEqual("Dave");
@@ -95,21 +111,42 @@ describe ('Character', function() {
     expect(myGame.characters[3].stressLevel).toEqual(0);
     expect(myGame.characters[3].timeOff).toEqual(0);
 
-    expect(myGame.characters[4].name).toEqual("Jingoistic Julia");
+    expect(myGame.characters[4].name).toEqual("Joyless Julia");
     expect(myGame.characters[4].type).toEqual("manager");
     expect(myGame.characters[4].seniority).toEqual(7);
     expect(myGame.characters[4].stressLevel).toEqual(0);
     expect(myGame.characters[4].timeOff).toEqual(0);
 
+    expect(myGame.characters[5].name).toEqual("Juanita");
+    expect(myGame.characters[5].type).toEqual("storeManager");
+    expect(myGame.characters[5].seniority).toEqual(9);
+    expect(myGame.characters[5].stressLevel).toEqual(0);
+    expect(myGame.characters[5].timeOff).toEqual(0);
+
   });  
 //Character Assets Tests
-//test ('character is randomly assigned 2 assets')
+test ('character is randomly assigned 2 assets', function() {
+  myGame.addCharacter("Ryan", "pizzaCutter");
+  myGame.characters[0].addAssets();
+  expect(Object.entries(allAssets)).toContainEqual(Object.values(myGame.characters[0].assets[0]));
+  expect(Object.entries(allAssets)).toContainEqual(Object.values(myGame.characters[0].assets[0]));
+  //expect.toContain(myGame.characters[0].assets)
+})
 
+// Object.entries(allAssets);
+// Object.entries(myGame.character[0].assets);
+
+// Object.entries --> array of key/value pairs
+// Object.keys --> array of keys
+// Object.values --> array of values
+
+// expect(allAssets).arrayContaining(myGame.character[0].assets)
 
 //Battle Tests
-test('when battle begins, includes myPlayer and an opponent name, job & seniority from this.characters[i])
+//test('when battle begins, includes myPlayer and an opponent name, job & seniority from this.characters[i])
 
 //test ('battle formula calculates outcome based on seniority and assets')
 //test ('battle outcome increases or decreases seniority and stress points')
 
 });
+

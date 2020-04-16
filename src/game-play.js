@@ -5,6 +5,8 @@ import { ProduceStocker } from './../src/characters.js';
 import { DoorPerson } from './../src/characters.js';
 import { Supervisor } from './../src/characters.js';
 import { Manager } from './../src/characters.js';
+import { StoreManager } from './../src/characters.js';
+
 
 export class Game {
   constructor(){
@@ -33,21 +35,26 @@ export class Game {
     } else if (characterType === 'manager') {
       let character = new Manager(name, characterType);
       this.characters.push(character);
+      return characterType;  
+    } else if (characterType === 'storeManager') {
+      let character = new StoreManager(name, characterType);
+      this.characters.push(character);
       return characterType;
     } 
   }
 
   startGame(name, characterType){
     this.addCharacter(name, characterType);
-
-    this.characters.push(new ChickenCooker("Malevolent Mikah", "chickenCooker"));
+    
     this.characters.push(new Supervisor("Devious DJ", "supervisor"));
-    this.characters.push(new Supervisor ("Needling Nitun", 'supervisor'))
-    this.characters.push(new Manager ("Jingoistic Julia", "manager"))
+    this.characters.push(new ChickenCooker("Malevolent Mikah", "chickenCooker"));
+    this.characters.push(new Supervisor("Needling Nitun", 'supervisor'));
+    this.characters.push(new Manager("Joyless Julia", "manager"));
+    this.characters.push(new StoreManager("Juanita", "storeManager"));
   }
 
   battle(){
-    
+
   }
 
 };
