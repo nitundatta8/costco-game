@@ -30,21 +30,7 @@ addAssets() {
   }
   return assetPair;
 } 
-  
-//levelUp() {
-//  
-//}
-//
-//stressLevel() {
-//  
-//}
-//
-//timeOff() {
-//  
-//}
-//
-//checkForWin() {
-//  
+
 }
 
 export class PizzaCutter extends Character {

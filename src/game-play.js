@@ -50,7 +50,7 @@ export class Game {
     this.characters.push(new Supervisor("Needling Nitun", 'supervisor'));
     this.characters.push(new Manager("Joyless Julia", "manager"));
     this.characters.push(new StoreManager("Juanita", "storeManager"));
-  }
+  };
 
   chooseOpponent(){
     let ranNumber = Math.floor(Math.random() * characters.length) + 1;
@@ -59,12 +59,6 @@ export class Game {
   };
 };
 
-//we need instantiate a battle in the tests
-//it needs to be fed the user and the opponent
-//amen
-//check in the test if battle[user] is like the user
-// check in the test if battle [oppnenent is like the opponent]
-
 export class Battle {
   constructor(user, opponent) {
     this.user=user;
@@ -72,19 +66,19 @@ export class Battle {
     this.roll = 0;
     this.margin = 0;
     this.battleWon = false;
-  }
-  
+  };
+
   diceRollFunction() {
     let dicePair = [];
     for (let i = 0; i < 2; i++) {
       let ranNumber = Math.floor(Math.random() * 6) + 1;
       dicePair.push(ranNumber);
-    }
+    };
     return dicePair;
-  }
+  };
 
   doBattle() {
-    let battleWon = false; 
+    console.log("Do you want to confront? y/n")
     let roll = this.diceRollFunction();
     let diceRoll = roll[0] + roll[1];
     // userPower takes seniority and then adds the modifiers from assets
@@ -93,33 +87,32 @@ export class Battle {
     this.margin = this.opponent.seniority - userPower + 5;
     // if we modify user stats + opponent stats here, how do we return the outcome to the game?
     // update character and opponent after battle
+    this.roll = diceRoll;
+  };
 
-    // if (diceRoll >= this.margin) {
-    //   battleWon = true;
-    //   this.user.seniority ++;
-    //   this.user.stress -= 1;
-    //   return "you won";
-    // }
-    // else {
-      
-    //   battleWon = false;
-    //   this.user.seniority -= 1;
-    //   this.user.stress -= 1;
-    //   return "you lost";
-    // }
-  }
+  avoidConfrontation() {
+    this.user.stressLevel ++;    
+  };
 
+  fight() {
+    if (this.roll >= this.margin) {
+      this.battleWon = true;
+      this.user.seniority ++;
+      this.user.stressLevel -= 1;
+      console.log('beat this margin' + this.margin);
+      console.log('your roll' + this.roll);
+      console.log('you won');    
+    } else {
+      this.battleWon = false;
+      this.user.stressLevel += 2;
+      console.log('beat this margin' + this.margin);
+      console.log('your roll' + this.roll);
+      console.log('you lost');
+    };
+    return this.battleWon
+  };
 };
+
+
   
-    
-
-    // if opponent has 7 seniority and player has 3
-    // take opponents seniority, subtract your seniority, then add 5
-    // you have to roll that number or higher to win
-    // 7 - 3 = 4        4 + 5?? = 9
-    // must roll 9 or higher to win
-    
-
-  // }
-
-//let ranNumber = Math.floor(Math.random() * 6)+1;
+  

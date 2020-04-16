@@ -136,13 +136,10 @@ test ('character is randomly assigned 2 assets', function() {
 
 test('battle takes in the player and opponent', function() {
   myGame.startGame("Jethro", "chickenCooker");
-
   let thisBattle = new Battle(myGame.characters[0], myGame.characters[1]);
   expect(thisBattle.user.name).toEqual('Jethro');
   expect(thisBattle.opponent.name).toEqual('Devious DJ');
-  
 });
-
 
 test('battle determines margin based on seniority and assets of player', function() {
   myGame.startGame("Jethro", "chickenCooker");
@@ -156,21 +153,39 @@ test('battle determines margin based on seniority and assets of player', functio
 
 });
 
+// test('battle diceRoll returns an array of two random dice values', function() {
+//   myGame.startGame("Fred", "produceStocker");
+//   let thisBattle = new Battle(myGame.characters[0], myGame.characters[2]);
+  
+//   expect(diceRoll).toEqual();
+// });
 
-test('battle diceRoll returns an array of two random dice values', function() {
-  myGame.startGame("Fred", "ProduceStocker");
-  let thisBattle = new Battle(myGame.characters[0], myGame.characters[2]);
-  expect(diceRoll).toEqual();
-});
 
-
-test('battle determines whether the user wins or loses based on roll and margin', function() {
-
-});
+//This test is not fully functional - it checks that a Boolean is returned, but not whether it is the correct Boolean.
+//test('battle determines whether the user wins or loses based on roll and margin', function() {
+//   myGame.startGame("Jethro", "chickenCooker");
+//   let myBattle = new Battle(myGame.characters[0], myGame.characters[1]);
+  
+//   myBattle.doBattle();
+//   myBattle.fight();
+//   expect(myBattle.battleWon).toEqual(false || true);
+// });
 
 
 test('battle updates player seniority if player wins', function() {
+  myGame.startGame("Jethro", "chickenCooker");
+  let myBattle = new Battle(myGame.characters[0], myGame.characters[1]);
 
+  myBattle.doBattle();
+  myBattle.fight();
+  if (myBattle.battleWon === true) {
+    expect(myGame.characters[0].seniority).toEqual(2);
+    expect(myGame.characters[0].stressLevel).toEqual(3);
+  } else {
+    expect(myGame.characters[0].stressLevel).toEqual(6);
+  }
+  
+  
 });
 
 
